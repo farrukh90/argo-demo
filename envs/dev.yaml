@@ -24,11 +24,11 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod-dns01
     acme.cert-manager.io/http01-edit-in-place: "true"
   hosts:
-    - host: dev-artemis.projectxconsulting.net
+    - host: dev-artemis.awsprojectxconsulting.net
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls: 
     - secretName: dev-artemis-tls
       hosts:
-        - dev-artemis.projectxconsulting.net
+        - dev-artemis.awsprojectxconsulting.net
