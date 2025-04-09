@@ -3,7 +3,12 @@ replicaCount: 1
 ingress:
   enabled: true
   className: "nginx"
-  annotations: {}
+  annotations: 
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod-dns01
+    acme.cert-manager.io/http01-edit-in-place: "true"
   hosts:
     - host: argo-demo-test.projectxconsulting.net
       paths:
